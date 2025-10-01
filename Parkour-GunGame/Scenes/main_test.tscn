@@ -1,0 +1,109 @@
+[gd_scene load_steps=16 format=3 uid="uid://bkfhp313eseum"]
+
+[ext_resource type="PackedScene" uid="uid://bkkfai2eyggy0" path="res://Scenes/mr_bean.tscn" id="2_3h1eg"]
+[ext_resource type="Texture2D" uid="uid://bvvmwa7txywq0" path="res://Assets/textures/PNG/Light/texture_11.png" id="2_087m6"]
+[ext_resource type="Texture2D" uid="uid://cr77885s0hmfl" path="res://Assets/textures/PNG/Purple/texture_13.png" id="2_oe0qp"]
+[ext_resource type="Texture2D" uid="uid://dxkhg7wdysgo2" path="res://Assets/textures/PNG/Orange/texture_01.png" id="3_3rfu2"]
+[ext_resource type="Texture2D" uid="uid://blgeuf4lnahw5" path="res://Assets/textures/PNG/Purple/texture_04.png" id="5_vfpxk"]
+[ext_resource type="Texture2D" uid="uid://cxou3rsg4cvcf" path="res://Assets/textures/PNG/Dark/texture_07.png" id="6_kbjga"]
+[ext_resource type="PackedScene" uid="uid://o7by0leih7xk" path="res://Scenes/trophy.tscn" id="7_kbjga"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kbjga"]
+sky_top_color = Color(0, 0.486275, 0.796078, 1)
+sky_horizon_color = Color(0.607495, 0.706515, 0.756515, 1)
+ground_bottom_color = Color(0.309804, 0.219608, 0.109804, 1)
+ground_horizon_color = Color(0.607495, 0.706515, 0.756515, 1)
+
+[sub_resource type="Sky" id="Sky_cg5rg"]
+sky_material = SubResource("ProceduralSkyMaterial_kbjga")
+
+[sub_resource type="Environment" id="Environment_iflb3"]
+background_mode = 2
+sky = SubResource("Sky_cg5rg")
+tonemap_mode = 4
+tonemap_exposure = 0.5
+tonemap_white = 16.0
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+sdfgi_bounce_feedback = 1.38
+glow_normalized = true
+glow_mix = 0.26
+glow_blend_mode = 4
+volumetric_fog_density = 0.1
+volumetric_fog_albedo = Color(0.496721, 0.00325229, 0.927331, 1)
+volumetric_fog_emission = Color(0, 0.415525, 0.599088, 1)
+volumetric_fog_emission_energy = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inabl"]
+albedo_texture = ExtResource("2_087m6")
+heightmap_scale = 5.02
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57bjo"]
+albedo_texture = ExtResource("2_oe0qp")
+emission = Color(0.554127, 0.120194, 1, 1)
+emission_energy_multiplier = 16.0
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xexhc"]
+albedo_texture = ExtResource("3_3rfu2")
+emission = Color(0.843137, 0.439216, 0, 1)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10uc2"]
+albedo_texture = ExtResource("5_vfpxk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_me17c"]
+albedo_texture = ExtResource("6_kbjga")
+uv1_triplanar = true
+
+[node name="main test" type="Node3D"]
+
+[node name="env" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_iflb3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="world" type="Node" parent="."]
+
+[node name="mr bean" parent="world" instance=ExtResource("2_3h1eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.85123, 23.6489)
+
+[node name="ground" type="CSGBox3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.31395)
+use_collision = true
+flip_faces = true
+size = Vector3(9, 20.1392, 55)
+material = SubResource("StandardMaterial3D_inabl")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54199, 0.306671, 22.7107)
+use_collision = true
+size = Vector3(12.084, 1.61334, 8.40039)
+material = SubResource("StandardMaterial3D_57bjo")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.693678, -4.43769, 19.0691)
+use_collision = true
+size = Vector3(13, 9.18689, 1)
+material = SubResource("StandardMaterial3D_xexhc")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 0.875793, -0.482686, 0, 0.482686, 0.875793, -3.71558, -8.08491, 10.4214)
+use_collision = true
+size = Vector3(3.2419, 0.727043, 11.1585)
+material = SubResource("StandardMaterial3D_10uc2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.376113, -7.83844, -10.8361)
+use_collision = true
+size = Vector3(11.088, 5.52894, 33.0943)
+material = SubResource("StandardMaterial3D_me17c")
+
+[node name="trophy" parent="world" instance=ExtResource("7_kbjga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42536, 21.3667)

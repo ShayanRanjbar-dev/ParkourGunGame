@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=4 uid="uid://o7by0leih7xk"]
+
+[ext_resource type="Script" uid="uid://ctq0nre6ahmi3" path="res://Scripts/trophy.gd" id="1_18cdb"]
+[ext_resource type="Texture2D" uid="uid://b5pwqhfanofna" path="res://Assets/Styloo Guns Asset Pack GLTF FBX/GLB/board_billmat_color.png" id="2_tn7ip"]
+[ext_resource type="Texture2D" uid="uid://c57gsj0pi3ec" path="res://Assets/Styloo Guns Asset Pack GLTF FBX/GLB/board_billmat_normal.png" id="3_h8e0y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0g7rx"]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_tn7ip")
+emission_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("3_h8e0y")
+detail_enabled = true
+detail_blend_mode = 1
+detail_uv_layer = 1
+detail_albedo = ExtResource("2_tn7ip")
+detail_normal = ExtResource("3_h8e0y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvx88"]
+resource_name = "billmat"
+cull_mode = 2
+albedo_texture = ExtResource("2_tn7ip")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("3_h8e0y")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rwoqq"]
+_surfaces = [{
+"aabb": AABB(-0.945433, -0.526606, -0.0387607, 1.89087, 1.05321, 0.0775214),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("CQAIAAIAAwACAAYABwAGAAsABAAAAAwABgACAAgAAwAHAAoAAQAAAAgABAAFAAoAAAAEAAsABQABAAkADgAPAAwAAAABAA0AAQAFAA4ABQAEAA8ACQACAAMAAwAGAAcABwALAAoABAAMAA8ABgAIAAsAAwAKAAkAAQAIAAkABAAKAAsAAAALAAgABQAJAAoADgAMAA0AAAANAAwAAQAOAA0ABQAPAA4A"),
+"name": "billmat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("+wW+Cv//AAD7BUD1//8AAAAAAAAAAAAAAAD//wAAAAAD+r4K//8AAAP6QPX//wAA//8AAAAAAAD/////AAAAAAAAAAD//wAAAAD/////AAD///////8AAP//AAD//wAA+wW+CtpAAAD7BUD12kAAAAP6QPXaQAAAA/q+CtpAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lsq6i"]
+resource_name = "board_Cube_097"
+_surfaces = [{
+"aabb": AABB(-0.945433, -0.526606, -0.0387607, 1.89087, 1.05321, 0.0775214),
+"attribute_data": PackedByteArray("Qbkc+9TpFwKJhhz3c2Qc+9TlFwKJhiRhkl3MWHDPwAJ+dxz3/wDMWHDLwAJ+dxlhQbmuXNTp//2HnBz3c2SuXNTl//2HnCRhkl3//nDP//1+cxz3/wD//nDL//1+cxlhI73//r3ZwAKJghz3kWD//iPBwAKJghlhkWDMWCPB//1zaBlhI73MWL3Z//1zaBz3/wDNVevxFwKIjxz3AAH/AL3dFwKIjyRhbZ8AAb3d//2IkyRhbZ/NVevx//2Ikxz3"),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("HQAaAAgACQAGABIAFwAUACMADQABACUAEwAHABkACgAWAB8AAwAAABgADAAPAB4AAAAMACEADwADABsAKgAtACQAAgAFACkABAAQACsAEQAOAC8AHQAIAAsACQASABUAFwAjACAADQAlAC4AEwAZACIACgAfABwAAwAYABsADAAeACEAAAAhABgADwAbAB4AKgAkACcAAgApACYABAArACgAEQAvACwA"),
+"material": SubResource("StandardMaterial3D_qvx88"),
+"name": "billmat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("+wW+Cv///7/7Bb4K//9U1fsFvgr///+/+wVA9f///7/7BUD1//9U1fsFQPX///+/AAAAAAAA//8AAAAAAABU1QAAAAAAAP+/AAD//wAA//8AAP//AABU1QAA//8AAP+/A/q+Cv///78D+r4K//9U1QP6vgr///+/A/pA9f///78D+kD1//9U1QP6QPX///+///8AAAAA/////wAAAABU1f//AAAAAP+//////wAA////////AABU1f////8AAP+/AAAAAP///78AAAAA//9U1QAAAAD///+/AAD//////78AAP////9U1QAA//////+//////////7////////9U1f////////+///8AAP///7///wAA//9U1f//AAD///+/+wW+CtpAAID7Bb4K2kBU1fsFvgraQP+/+wVA9dpAAID7BUD12kBU1fsFQPXaQP+/A/pA9dpAAIAD+kD12kBU1QP6QPXaQP+/A/q+CtpAAIAD+r4K2kBU1QP6vgraQP+//3//f1TVqir/fwAA/3//f6oqVNX/fwAA/7//P6oqVNX/f////7//P1TVqir/f////3//f1TVqir/f////3//f6oqVNX/f////7//P6oqVNX/fwAA/7//P1TVqir/fwAA/3//f6oqVNX/f////3//f1TVqir/f////3//f1TVqir/fwAA/3//f6oqVNX/fwAA/3///1TVqir/fwAA/3///6oqVNX/fwAA/3///6oqVNX/f////3///1TVqir/f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_rwoqq")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uckt5"]
+radius = 0.547095
+
+[node name="trophy" type="Node3D"]
+script = ExtResource("1_18cdb")
+
+[node name="board2" type="Node3D" parent="."]
+
+[node name="board" type="MeshInstance3D" parent="board2"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_0g7rx")
+mesh = SubResource("ArrayMesh_lsq6i")
+
+[node name="board2" type="MeshInstance3D" parent="board2"]
+transform = Transform3D(0.5, 0, 8.74228e-08, 0, 0.5, 0, -8.74228e-08, 0, 0.5, 0, 0, 0.0374676)
+material_override = SubResource("StandardMaterial3D_0g7rx")
+mesh = SubResource("ArrayMesh_lsq6i")
+
+[node name="player detector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player detector"]
+shape = SubResource("SphereShape3D_uckt5")
+
+[connection signal="body_entered" from="player detector" to="." method="_on_player_detector_body_entered"]

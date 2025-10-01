@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="gun_info" load_steps=2 format=3 uid="uid://bqm2w2guglrv4"]
+
+[ext_resource type="Script" uid="uid://drydjx01tglhl" path="res://Scripts/gun_class.gd" id="1_7xh0k"]
+
+[resource]
+script = ExtResource("1_7xh0k")
+ammo = 0
+auto_reload = false
+can_recoil = false
+metadata/_custom_type_script = ExtResource("1_7xh0k")
